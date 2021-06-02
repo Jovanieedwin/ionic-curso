@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-header>Usuarios </ion-header>
+    <ion-item *ngFor="let item of users" class="ion-activable" [routerLink]="['/user', item.id]">
+      <ion-avatar slot="start">
+        <img [src]="item.avatar">
+      </ion-avatar>
+        <ion-label>
+          <h2>{{item.first_name + item.last_name}}</h2>
+          <h3>{{item.email}}</h3>
+        </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
